@@ -56,13 +56,13 @@ function GetBooks1()
             var newBook : GameObject = Instantiate(book, transform.position, transform.rotation);
             var stack : GameObject = stackList[Random.Range(0, stackList.Count -1)];
             newBook.transform.position = stack.transform.position;
-            newBook.transform.position.y += stack.GetComponent(BookStack).height * book.GetComponent(BoxCollider).bounds.size.y     ;
+            //newBook.transform.position.y += stack.GetComponent(BookStack).height * book.GetComponent(BoxCollider).bounds.size.y     ;
             stack.GetComponent(BookStack).height++;
             newBook.transform.rotation.y = Random.Range(0,360);
             newBook.name = file.Name;         
             newBook.AddComponent(Book);
             newBook.GetComponent(Book).file = file;
-            
+            //yield WaitForSeconds(.25);
     }
 
     populated = true;
